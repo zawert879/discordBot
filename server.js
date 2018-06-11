@@ -8,7 +8,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
 	if (msg.content === 'update') {
-		msg.reply('Новая реакция на команду "саня" ', { tts: true });
+		msg.reply('Добавлена команда who pubg,Рандомит две точки для поиска места высадки ', { tts: true });
 	}
 });
 
@@ -34,6 +34,12 @@ client.on('message', msg => {
 	if (msg.content.substring(0,9)=='anime who') {
 		// console.log(JSON.stringify(bans));
 		msg.channel.send(bans[msg.content.substring(10)]);
+	}
+});
+client.on('message', msg => {
+	if (msg.content.substring(0,9)=='who pubg') {
+
+		msg.channel.send('x=' +Math.floor(Math.random() * (8 - 1) + 1)+'y='+ Math.floor(Math.random() * (8 - 1) + 1));
 	}
 });
 client.on('message', msg => {
@@ -75,3 +81,5 @@ setInterval(function () {
 	// console.log(bans.get(Date.now));
 }, 1000);
 // let member = discord.channels.get('262298597423448064').members
+
+
